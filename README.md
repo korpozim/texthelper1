@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/texthelper1.svg)](https://www.npmjs.com/package/texthelper1)
+
 # texthelper1
 
 ### Install texthelper1
