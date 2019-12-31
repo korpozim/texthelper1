@@ -19,3 +19,9 @@ let text = "asd";
 console.log(helper.endpoint(text));  // asd.
 console.log(helper.firstup(text));   // Asd
 ```
+
+### Test
+
+```
+npm test
+```
