@@ -14,10 +14,11 @@ npm install --save texthelper1
 ```javascript
 const helper = require("texthelper1");
 
-let text = "asd";
+let text = "asd dsa";
 
-console.log(helper.endpoint(text));  // asd.
-console.log(helper.firstup(text));   // Asd
+console.log(helper.endpoint(text));  // asd dsa.
+console.log(helper.firstup(text));   // Asd dsa
+console.log(helper.wordsfirstup(text));   // Asd Dsa
 ```
 
 ### Test
