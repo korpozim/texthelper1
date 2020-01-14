@@ -63,5 +63,37 @@ module.exports = {
 
     trim: function (text) {
         return text.toString().trim();
+    },
+
+    reverse: function (text) {
+        return text.toString().split("").reverse().join("");
+    },
+
+    removenumber: function (text) {
+        return text.toString().split("").map(x => { return isNaN(x) ? x : "" }).join("");
+    },
+
+    password: function (text) {
+        return text.toString().split("").map(x => "*").join("");
+    },
+
+    reset: function (text) {
+        return "";
+    },
+
+    getlength: function (text) {
+        return text.toString().length;
+    },
+
+    isstring: function (text) {
+        return typeof (text) === typeof ("");
+    },
+
+    isurl: function (text) {
+        return text.toString().includes("http://") || text.toString().includes("https://");
+    },
+
+    isnullorempty: function (text) {
+        return typeof (text) === typeof (null) || typeof (text) === typeof (undefined) || (typeof (text) === typeof ("") ? (text.toString().length < 1 ? true : false) : false);
     }
 }

@@ -75,4 +75,61 @@ describe("App", function () {
         expect(helper.trim(" test ")).toEqual("test");
     });
 
+    it("reverse test", function () {
+        expect(helper.reverse("test")).toEqual("tset");
+        expect(helper.reverse("test test")).toEqual("tset tset");
+    });
+
+    it("removenumber test", function () {
+        expect(helper.removenumber("test")).toEqual("test");
+        expect(helper.removenumber("test1")).toEqual("test");
+        expect(helper.removenumber("1test")).toEqual("test");
+        expect(helper.removenumber("1te1st1")).toEqual("test");
+        expect(helper.removenumber("12434test")).toEqual("test");
+    });
+
+    it("password test", function () {
+        expect(helper.password("")).toEqual("");
+        expect(helper.password("test")).toEqual("****");
+    });
+
+    it("reset test", function () {
+        expect(helper.reset("test")).toEqual("");
+        expect(helper.reset("test test")).toEqual("");
+    });
+
+    it("getlength test", function () {
+        expect(helper.getlength("")).toEqual(0);
+        expect(helper.getlength("test")).toEqual(4);
+        expect(helper.getlength("test test")).toEqual(9);
+    });
+
+    it("isstring test", function () {
+        expect(helper.isstring("")).toEqual(true);
+        expect(helper.isstring("test")).toEqual(true);
+        expect(helper.isstring("1")).toEqual(true);
+        expect(helper.isstring(1)).toEqual(false);
+        expect(helper.isstring(true)).toEqual(false);
+    });
+
+    it("isurl test", function () {
+        expect(helper.isurl("test")).toEqual(false);
+        expect(helper.isurl("test http test")).toEqual(false);
+        expect(helper.isurl("http://www.github.com")).toEqual(true);
+        expect(helper.isurl("https://www.github.com")).toEqual(true);
+        expect(helper.isurl("http://github.com")).toEqual(true);
+        expect(helper.isurl("https://github.com")).toEqual(true);
+    });
+
+    it("isnullorempty test", function () {
+        expect(helper.isnullorempty("")).toEqual(true);
+        expect(helper.isnullorempty(null)).toEqual(true);
+        expect(helper.isnullorempty(undefined)).toEqual(true);
+        expect(helper.isnullorempty("test")).toEqual(false);
+        expect(helper.isnullorempty(true)).toEqual(false);
+        expect(helper.isnullorempty(1)).toEqual(false);
+        expect(helper.isnullorempty("null")).toEqual(false);
+        expect(helper.isnullorempty("undefined")).toEqual(false);
+    });
+
 });  
