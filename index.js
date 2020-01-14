@@ -1,6 +1,6 @@
 module.exports = {
     endpoint: function (text) {
-        return text[text.length - 1] != "." ? text + "." : text;
+        return text + ".";
     },
 
     firstup: function (text) {

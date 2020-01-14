@@ -4,8 +4,8 @@ describe("App", function () {
 
     it("endpoint test", function () {
         expect(helper.endpoint("test")).toEqual("test.");
-        expect(helper.endpoint("test.")).toEqual("test.");
-        expect(helper.endpoint("test..")).toEqual("test..");
+        expect(helper.endpoint("test.")).toEqual("test..");
+        expect(helper.endpoint("test..")).toEqual("test...");
     });
 
     it("firstup test", function () {
