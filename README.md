@@ -20,7 +20,7 @@ const helper = require("texthelper1");
 
 let text = "asd dsa";
 
-console.log(helper.endpoint(text));  // asd dsa.
+console.log(helper.endpoint(text));   // asd dsa.
 console.log(helper.firstup(text));   // Asd dsa
 console.log(helper.wordsfirstup(text));   // Asd Dsa
 console.log(helper.upper(text));   // ASD DSA
@@ -34,4 +34,14 @@ console.log(helper.pascalcase(text));   // AsdDsa
 console.log(helper.snakecase(text));   // asd_dsa
 console.log(helper.kebabcase(text));   // asd-dsa
 console.log(helper.trim(text));   // asd dsa
+console.log(helper.reverse(text));   // asd dsa
+console.log(helper.removenumber(text));   // asd dsa
+console.log(helper.password(text));   // *******
+console.log(helper.reset(text));   // 
+
+console.log(helper.getlength(text));   // 7
+
+console.log(helper.isstring(text));   // true
+console.log(helper.isurl(text));   // false
+console.log(helper.isnullorempty(text));   // false
 ```
