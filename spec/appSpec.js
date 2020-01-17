@@ -98,6 +98,15 @@ describe("App", function () {
         expect(helper.reset("test test")).toEqual("");
     });
 
+    it("removespace test", function () {
+        expect(helper.removespace("test")).toEqual("test");
+        expect(helper.removespace("test ")).toEqual("test");
+        expect(helper.removespace(" test ")).toEqual("test");
+        expect(helper.removespace(" t est ")).toEqual("test");
+        expect(helper.removespace(" t e st ")).toEqual("test");
+        expect(helper.removespace(" t e s t ")).toEqual("test");
+    });
+
     it("getlength test", function () {
         expect(helper.getlength("")).toEqual(0);
         expect(helper.getlength("test")).toEqual(4);

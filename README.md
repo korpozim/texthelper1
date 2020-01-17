@@ -36,6 +36,7 @@ console.log(helper.kebabcase(text));   // asd-dsa
 console.log(helper.trim(text));   // asd dsa
 console.log(helper.reverse(text));   // asd dsa
 console.log(helper.removenumber(text));   // asd dsa
+console.log(helper.removespace(text));   // asddsa
 console.log(helper.password(text));   // *******
 console.log(helper.reset(text));   // 
 

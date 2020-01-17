@@ -73,6 +73,10 @@ module.exports = {
         return text.toString().split("").map(x => { return isNaN(x) ? x : "" }).join("");
     },
 
+    removespace: function (text) {
+        return text.toString().split("").map(x => x.trim()).join("");
+    },
+
     password: function (text) {
         return text.toString().split("").map(x => "*").join("");
     },
