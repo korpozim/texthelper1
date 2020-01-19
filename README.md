@@ -27,7 +27,7 @@ console.log(helper.upper(text));   // ASD DSA
 console.log(helper.lower(text));   // asd dsa
 console.log(helper.doublequotes(text));   // "asd dsa"
 console.log(helper.singlequotes(text));   // 'asd dsa'
-console.log(helper.brackets(text));   // (asd dsa)
+console.log(helper.brackets(text));   // [asd dsa]
 console.log(helper.blabla(text));   // asd dsa...
 console.log(helper.camelcase(text));   // asdDsa
 console.log(helper.pascalcase(text));   // AsdDsa
@@ -39,6 +39,11 @@ console.log(helper.removenumber(text));   // asd dsa
 console.log(helper.removespace(text));   // asddsa
 console.log(helper.password(text));   // *******
 console.log(helper.reset(text));   // 
+console.log(helper.question(text));   // asd dsa?
+console.log(helper.exclamation(text));   // asd dsa!
+console.log(helper.parentheses(text));   // (asd dsa)
+console.log(helper.braces(text));   // {asd dsa}
+console.log(helper.anglebrackets(text));   // <asd dsa>
 
 console.log(helper.getlength(text));   // 7
 

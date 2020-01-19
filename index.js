@@ -28,7 +28,7 @@ module.exports = {
     },
 
     brackets: function (text) {
-        return "(" + text.toString() + ")";
+        return "[" + text.toString() + "]";
     },
 
     blabla: function (text) {
@@ -83,6 +83,26 @@ module.exports = {
 
     reset: function (text) {
         return "";
+    },
+
+    question: function (text) {
+        return text.toString() + "?";
+    },
+
+    exclamation: function (text) {
+        return text.toString() + "!";
+    },
+
+    parentheses: function (text) {
+        return "(" + text.toString() + ")";
+    },
+
+    braces: function (text) {
+        return "{" + text.toString() + "}";
+    },
+
+    anglebrackets: function (text) {
+        return "<" + text.toString() + ">";
     },
 
     getlength: function (text) {

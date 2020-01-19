@@ -39,7 +39,7 @@ describe("App", function () {
     });
 
     it("brackets test", function () {
-        expect(helper.brackets("test")).toEqual("(test)");
+        expect(helper.brackets("test")).toEqual("[test]");
     });
 
     it("blabla test", function () {
@@ -105,6 +105,26 @@ describe("App", function () {
         expect(helper.removespace(" t est ")).toEqual("test");
         expect(helper.removespace(" t e st ")).toEqual("test");
         expect(helper.removespace(" t e s t ")).toEqual("test");
+    });
+
+    it("question test", function () {
+        expect(helper.question("test")).toEqual("test?");
+    });
+
+    it("exclamation test", function () {
+        expect(helper.exclamation("test")).toEqual("test!");
+    });
+
+    it("parentheses test", function () {
+        expect(helper.parentheses("test")).toEqual("(test)");
+    });
+
+    it("braces test", function () {
+        expect(helper.braces("test")).toEqual("{test}");
+    });
+
+    it("anglebrackets test", function () {
+        expect(helper.anglebrackets("test")).toEqual("<test>");
     });
 
     it("getlength test", function () {
