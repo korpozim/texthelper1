@@ -10,7 +10,7 @@
   "main": "index.js",
   "scripts": {
     "test": "nyc --reporter=lcov jasmine",
-    "coverage": "codecov -t $CODECOV_TOKEN"
+    "coverage": "codecov"
   },
   "keywords": [
     "text",
