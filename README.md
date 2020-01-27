@@ -6,6 +6,7 @@ Simple text helper library for javascript.
 
 [![npm version](https://badge.fury.io/js/texthelper1.svg)](https://www.npmjs.com/package/texthelper1)
 [![Build Status](https://travis-ci.com/korpozim/texthelper1.svg?branch=master)](https://travis-ci.com/korpozim/texthelper1)
+[![codecov](https://codecov.io/gh/korpozim/texthelper1/branch/master/graph/badge.svg)](https://codecov.io/gh/korpozim/texthelper1)
 
 ### Install texthelper1
 
