@@ -17,38 +17,49 @@ npm install --save texthelper1
 ### Using texthelper1
 
 ```javascript
-const helper = require("texthelper1");
+// ES6
+import * as texthelper from 'texthelper1';
 
-let text = "asd dsa";
+// ES5
+const texthelper = require('texthelper1');
 
-console.log(helper.endpoint(text));   // asd dsa.
-console.log(helper.firstup(text));   // Asd dsa
-console.log(helper.wordsfirstup(text));   // Asd Dsa
-console.log(helper.upper(text));   // ASD DSA
-console.log(helper.lower(text));   // asd dsa
-console.log(helper.doublequotes(text));   // "asd dsa"
-console.log(helper.singlequotes(text));   // 'asd dsa'
-console.log(helper.brackets(text));   // [asd dsa]
-console.log(helper.blabla(text));   // asd dsa...
-console.log(helper.camelcase(text));   // asdDsa
-console.log(helper.pascalcase(text));   // AsdDsa
-console.log(helper.snakecase(text));   // asd_dsa
-console.log(helper.kebabcase(text));   // asd-dsa
-console.log(helper.trim(text));   // asd dsa
-console.log(helper.reverse(text));   // asd dsa
-console.log(helper.removenumber(text));   // asd dsa
-console.log(helper.removespace(text));   // asddsa
-console.log(helper.password(text));   // *******
-console.log(helper.reset(text));   // 
-console.log(helper.question(text));   // asd dsa?
-console.log(helper.exclamation(text));   // asd dsa!
-console.log(helper.parentheses(text));   // (asd dsa)
-console.log(helper.braces(text));   // {asd dsa}
-console.log(helper.anglebrackets(text));   // <asd dsa>
+const text = 'asd dsa';
 
-console.log(helper.getlength(text));   // 7
+// General
+texthelper.firstup(text);         // Asd dsa
+texthelper.wordsfirstup(text);    // Asd Dsa
+texthelper.upper(text);           // ASD DSA
+texthelper.lower(text);           // asd dsa
+texthelper.doublequotes(text);    // "asd dsa"
+texthelper.singlequotes(text);    // 'asd dsa'
+texthelper.camelcase(text);       // asdDsa
+texthelper.pascalcase(text);      // AsdDsa
+texthelper.snakecase(text);       // asd_dsa
+texthelper.kebabcase(text);       // asd-dsa
+texthelper.reverse(text);         // asd dsa
+texthelper.removenumber(text);    // asd dsa
+texthelper.removespace(text);     // asddsa
 
-console.log(helper.isstring(text));   // true
-console.log(helper.isurl(text));   // false
-console.log(helper.isnullorempty(text));   // false
+// Punctuation marks
+texthelper.endpoint(text);        // asd dsa.
+texthelper.question(text);        // asd dsa?
+texthelper.exclamation(text);     // asd dsa!
+texthelper.blabla(text);          // asd dsa...
+
+// Brackets
+texthelper.brackets(text);        // [asd dsa]
+texthelper.parentheses(text);     // (asd dsa)
+texthelper.braces(text);          // {asd dsa}
+texthelper.anglebrackets(text);   // <asd dsa>
+
+// Validator
+texthelper.isstring(text);        // true
+texthelper.isurl(text);           // false
+texthelper.isnullorempty(text);   // false
+
+// Miscellaneous
+texthelper.password(text);        // *******
+texthelper.reset(text);           // 
+texthelper.getlength(text);       // 7
+texthelper.trim(text);            // asd dsa
 ```
