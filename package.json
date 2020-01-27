@@ -9,7 +9,8 @@
   },
   "main": "index.js",
   "scripts": {
-    "test": "jasmine"
+    "test": "nyc --reporter=lcov jasmine",
+    "coverage": "codecov -t $CODECOV_TOKEN"
   },
   "keywords": [
     "text",
@@ -20,6 +21,8 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "jasmine": "^3.5.0"
+    "codecov": "^3.6.2",
+    "jasmine": "^3.5.0",
+    "nyc": "^15.0.0"
   }
 }
