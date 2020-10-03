@@ -17,38 +17,44 @@ npm install --save texthelper1
 ### Using texthelper1
 
 ```javascript
-const helper = require("texthelper1");
+// ES6
+import 'texthelper1';
 
-let text = "asd dsa";
+// ES5
+require('texthelper1');
 
-console.log(helper.endpoint(text));   // asd dsa.
-console.log(helper.firstup(text));   // Asd dsa
-console.log(helper.wordsfirstup(text));   // Asd Dsa
-console.log(helper.upper(text));   // ASD DSA
-console.log(helper.lower(text));   // asd dsa
-console.log(helper.doublequotes(text));   // "asd dsa"
-console.log(helper.singlequotes(text));   // 'asd dsa'
-console.log(helper.brackets(text));   // [asd dsa]
-console.log(helper.blabla(text));   // asd dsa...
-console.log(helper.camelcase(text));   // asdDsa
-console.log(helper.pascalcase(text));   // AsdDsa
-console.log(helper.snakecase(text));   // asd_dsa
-console.log(helper.kebabcase(text));   // asd-dsa
-console.log(helper.trim(text));   // asd dsa
-console.log(helper.reverse(text));   // asd dsa
-console.log(helper.removenumber(text));   // asd dsa
-console.log(helper.removespace(text));   // asddsa
-console.log(helper.password(text));   // *******
-console.log(helper.reset(text));   // 
-console.log(helper.question(text));   // asd dsa?
-console.log(helper.exclamation(text));   // asd dsa!
-console.log(helper.parentheses(text));   // (asd dsa)
-console.log(helper.braces(text));   // {asd dsa}
-console.log(helper.anglebrackets(text));   // <asd dsa>
+const text = 'asd dsa';
 
-console.log(helper.getlength(text));   // 7
+// General
+text.firstup();         // Asd dsa
+text.wordsfirstup();    // Asd Dsa
+text.doublequotes();    // "asd dsa"
+text.singlequotes();    // 'asd dsa'
+text.camelcase();       // asdDsa
+text.pascalcase();      // AsdDsa
+text.snakecase();       // asd_dsa
+text.kebabcase();       // asd-dsa
+text.reverse();         // asd dsa
+text.removenumber();    // asd dsa
+text.removespace();     // asddsa
 
-console.log(helper.isstring(text));   // true
-console.log(helper.isurl(text));   // false
-console.log(helper.isnullorempty(text));   // false
+// Punctuation marks
+text.endpoint();        // asd dsa.
+text.question();        // asd dsa?
+text.exclamation();     // asd dsa!
+text.blabla();          // asd dsa...
+
+// Brackets
+text.brackets();        // [asd dsa]
+text.parentheses();     // (asd dsa)
+text.braces();          // {asd dsa}
+text.anglebrackets();   // <asd dsa>
+
+// Validator
+text.isurl();           // false
+text.isnullorempty();   // false
+
+// Miscellaneous
+text.password();        // *******
+text.reset();           // 
 ```
