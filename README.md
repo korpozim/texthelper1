@@ -57,4 +57,7 @@ text.isnullorempty();   // false
 // Miscellaneous
 text.password();        // *******
 text.reset();           // 
+
+// Complex
+text.blabla().question().parentheses()      // (asd dsa...?)
 ```
