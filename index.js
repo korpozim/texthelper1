@@ -1,42 +1,34 @@
-module.exports = {
-    endpoint: function (text) {
-        return text + ".";
+Object.assign(String.prototype, {
+    endpoint: function () {
+        return this + ".";
     },
 
-    firstup: function (text) {
-        return text.toString()[0].toUpperCase() + text.toString().substring(1, text.length);
+    firstup: function () {
+        return this.toString()[0].toUpperCase() + this.toString().substring(1, this.length);
     },
 
-    wordsfirstup: function (text) {
-        return text.toString().split(" ").map(x => x[0].toUpperCase() + x.substring(1, x.length)).join(" ");
+    wordsfirstup: function () {
+        return this.toString().split(" ").map(x => x[0].toUpperCase() + x.substring(1, x.length)).join(" ");
     },
 
-    upper: function (text) {
-        return text.toString().toUpperCase();
+    doublequotes: function () {
+        return "\"" + this.toString() + "\"";
     },
 
-    lower: function (text) {
-        return text.toString().toLowerCase();
+    singlequotes: function () {
+        return "\'" + this.toString() + "\'";
     },
 
-    doublequotes: function (text) {
-        return "\"" + text.toString() + "\"";
+    brackets: function () {
+        return "[" + this.toString() + "]";
     },
 
-    singlequotes: function (text) {
-        return "\'" + text.toString() + "\'";
+    blabla: function () {
+        return this.toString() + "...";
     },
 
-    brackets: function (text) {
-        return "[" + text.toString() + "]";
-    },
-
-    blabla: function (text) {
-        return text.toString() + "...";
-    },
-
-    camelcase: function (text) {
-        return text.toString().split(" ").map((word, index) => {
+    camelcase: function () {
+        return this.toString().split(" ").map((word, index) => {
             let tempWord = word.toString().toLowerCase();
 
             if (index != 0) {
@@ -47,77 +39,65 @@ module.exports = {
         }).join("");
     },
 
-    pascalcase: function (text) {
-        return text.toString().split(" ").map((word) => {
+    pascalcase: function () {
+        return this.toString().split(" ").map((word) => {
             return word.toString()[0].toUpperCase() + word.toString().toLowerCase().substring(1, word.toString().length);
         }).join("");
     },
 
-    snakecase: function (text) {
-        return text.toString().split(" ").map(x => x.toString().toLowerCase()).join("_");
+    snakecase: function () {
+        return this.toString().split(" ").map(x => x.toString().toLowerCase()).join("_");
     },
 
-    kebabcase: function (text) {
-        return text.toString().split(" ").map(x => x.toString().toLowerCase()).join("-");
+    kebabcase: function () {
+        return this.toString().split(" ").map(x => x.toString().toLowerCase()).join("-");
     },
 
-    trim: function (text) {
-        return text.toString().trim();
+    reverse: function () {
+        return this.toString().split("").reverse().join("");
     },
 
-    reverse: function (text) {
-        return text.toString().split("").reverse().join("");
+    removenumber: function () {
+        return this.toString().split("").map(x => { return isNaN(x) ? x : "" }).join("");
     },
 
-    removenumber: function (text) {
-        return text.toString().split("").map(x => { return isNaN(x) ? x : "" }).join("");
+    removespace: function () {
+        return this.toString().split("").map(x => x.trim()).join("");
     },
 
-    removespace: function (text) {
-        return text.toString().split("").map(x => x.trim()).join("");
+    password: function () {
+        return this.toString().split("").map(x => "*").join("");
     },
 
-    password: function (text) {
-        return text.toString().split("").map(x => "*").join("");
-    },
-
-    reset: function (text) {
+    reset: function () {
         return "";
     },
 
-    question: function (text) {
-        return text.toString() + "?";
+    question: function () {
+        return this.toString() + "?";
     },
 
-    exclamation: function (text) {
-        return text.toString() + "!";
+    exclamation: function () {
+        return this.toString() + "!";
     },
 
-    parentheses: function (text) {
-        return "(" + text.toString() + ")";
+    parentheses: function () {
+        return "(" + this.toString() + ")";
     },
 
-    braces: function (text) {
-        return "{" + text.toString() + "}";
+    braces: function () {
+        return "{" + this.toString() + "}";
     },
 
-    anglebrackets: function (text) {
-        return "<" + text.toString() + ">";
+    anglebrackets: function () {
+        return "<" + this.toString() + ">";
     },
 
-    getlength: function (text) {
-        return text.toString().length;
+    isurl: function () {
+        return this.toString().includes("http://") || this.toString().includes("https://");
     },
 
-    isstring: function (text) {
-        return typeof (text) === typeof ("");
-    },
-
-    isurl: function (text) {
-        return text.toString().includes("http://") || text.toString().includes("https://");
-    },
-
-    isnullorempty: function (text) {
-        return typeof (text) === typeof (null) || typeof (text) === typeof (undefined) || (typeof (text) === typeof ("") ? (text.toString().length < 1 ? true : false) : false);
+    isnullorempty: function () {
+        return this.length > 0 ? false : true;
     }
-}
+})

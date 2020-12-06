@@ -1,164 +1,127 @@
-const helper = require("../index");
+require("../index");
 
 describe("App", function () {
 
     it("endpoint test", function () {
-        expect(helper.endpoint("test")).toEqual("test.");
-        expect(helper.endpoint("test.")).toEqual("test..");
-        expect(helper.endpoint("test..")).toEqual("test...");
+        expect("test".endpoint()).toEqual("test.");
+        expect("test.".endpoint()).toEqual("test..");
+        expect("test..".endpoint()).toEqual("test...");
     });
 
     it("firstup test", function () {
-        expect(helper.firstup("test")).toEqual("Test");
-        expect(helper.firstup("Test")).toEqual("Test");
+        expect("test".firstup()).toEqual("Test");
+        expect("Test".firstup()).toEqual("Test");
     });
 
     it("wordsfirstup test", function () {
-        expect(helper.wordsfirstup("test test")).toEqual("Test Test");
-        expect(helper.wordsfirstup("Test test")).toEqual("Test Test");
-        expect(helper.wordsfirstup("test Test")).toEqual("Test Test");
-        expect(helper.wordsfirstup("Test Test")).toEqual("Test Test");
-    });
-
-    it("upper test", function () {
-        expect(helper.upper("test")).toEqual("TEST");
-        expect(helper.upper("test test")).toEqual("TEST TEST");
-    });
-
-    it("lower test", function () {
-        expect(helper.lower("TEST")).toEqual("test");
-        expect(helper.lower("TEST TEST")).toEqual("test test");
+        expect("test test".wordsfirstup()).toEqual("Test Test");
+        expect("Test test".wordsfirstup()).toEqual("Test Test");
+        expect("test Test".wordsfirstup()).toEqual("Test Test");
+        expect("Test Test".wordsfirstup()).toEqual("Test Test");
     });
 
     it("doublequotes test", function () {
-        expect(helper.doublequotes("test")).toEqual("\"test\"");
+        expect("test".doublequotes()).toEqual("\"test\"");
     });
 
     it("singlequotes test", function () {
-        expect(helper.singlequotes("test")).toEqual("\'test\'");
+        expect("test".singlequotes()).toEqual("\'test\'");
     });
 
     it("brackets test", function () {
-        expect(helper.brackets("test")).toEqual("[test]");
+        expect("test".brackets()).toEqual("[test]");
     });
 
     it("blabla test", function () {
-        expect(helper.blabla("test")).toEqual("test...");
+        expect("test".blabla()).toEqual("test...");
     });
 
     it("camelcase test", function () {
-        expect(helper.camelcase("test")).toEqual("test");
-        expect(helper.camelcase("test test")).toEqual("testTest");
+        expect("test".camelcase()).toEqual("test");
+        expect("test test".camelcase()).toEqual("testTest");
     });
 
     it("pascalcase test", function () {
-        expect(helper.pascalcase("test")).toEqual("Test");
-        expect(helper.pascalcase("test test")).toEqual("TestTest");
+        expect("test".pascalcase()).toEqual("Test");
+        expect("test test".pascalcase()).toEqual("TestTest");
     });
 
     it("snakecase test", function () {
-        expect(helper.snakecase("test")).toEqual("test");
-        expect(helper.snakecase("TEST")).toEqual("test");
-        expect(helper.snakecase("test test")).toEqual("test_test");
+        expect("test".snakecase()).toEqual("test");
+        expect("TEST".snakecase()).toEqual("test");
+        expect("test test".snakecase()).toEqual("test_test");
     });
 
     it("kebabcase test", function () {
-        expect(helper.kebabcase("test")).toEqual("test");
-        expect(helper.kebabcase("TEST")).toEqual("test");
-        expect(helper.kebabcase("test test")).toEqual("test-test");
-    });
-
-    it("trim test", function () {
-        expect(helper.trim("test")).toEqual("test");
-        expect(helper.trim(" test")).toEqual("test");
-        expect(helper.trim("test ")).toEqual("test");
-        expect(helper.trim(" test ")).toEqual("test");
+        expect("test".kebabcase()).toEqual("test");
+        expect("TEST".kebabcase()).toEqual("test");
+        expect("test test".kebabcase()).toEqual("test-test");
     });
 
     it("reverse test", function () {
-        expect(helper.reverse("test")).toEqual("tset");
-        expect(helper.reverse("test test")).toEqual("tset tset");
+        expect("test".reverse()).toEqual("tset");
+        expect("test test".reverse()).toEqual("tset tset");
     });
 
     it("removenumber test", function () {
-        expect(helper.removenumber("test")).toEqual("test");
-        expect(helper.removenumber("test1")).toEqual("test");
-        expect(helper.removenumber("1test")).toEqual("test");
-        expect(helper.removenumber("1te1st1")).toEqual("test");
-        expect(helper.removenumber("12434test")).toEqual("test");
+        expect("test".removenumber()).toEqual("test");
+        expect("test1".removenumber()).toEqual("test");
+        expect("1test".removenumber()).toEqual("test");
+        expect("1te1st1".removenumber()).toEqual("test");
+        expect("12434test".removenumber()).toEqual("test");
     });
 
     it("password test", function () {
-        expect(helper.password("")).toEqual("");
-        expect(helper.password("test")).toEqual("****");
+        expect("".password()).toEqual("");
+        expect("test".password()).toEqual("****");
     });
 
     it("reset test", function () {
-        expect(helper.reset("test")).toEqual("");
-        expect(helper.reset("test test")).toEqual("");
+        expect("test".reset()).toEqual("");
+        expect("test test".reset()).toEqual("");
     });
 
     it("removespace test", function () {
-        expect(helper.removespace("test")).toEqual("test");
-        expect(helper.removespace("test ")).toEqual("test");
-        expect(helper.removespace(" test ")).toEqual("test");
-        expect(helper.removespace(" t est ")).toEqual("test");
-        expect(helper.removespace(" t e st ")).toEqual("test");
-        expect(helper.removespace(" t e s t ")).toEqual("test");
+        expect("test".removespace()).toEqual("test");
+        expect("test ".removespace()).toEqual("test");
+        expect(" test ".removespace()).toEqual("test");
+        expect(" t est ".removespace()).toEqual("test");
+        expect(" t e st ".removespace()).toEqual("test");
+        expect(" t e s t ".removespace()).toEqual("test");
     });
 
     it("question test", function () {
-        expect(helper.question("test")).toEqual("test?");
+        expect("test".question()).toEqual("test?");
     });
 
     it("exclamation test", function () {
-        expect(helper.exclamation("test")).toEqual("test!");
+        expect("test".exclamation()).toEqual("test!");
     });
 
     it("parentheses test", function () {
-        expect(helper.parentheses("test")).toEqual("(test)");
+        expect("test".parentheses()).toEqual("(test)");
     });
 
     it("braces test", function () {
-        expect(helper.braces("test")).toEqual("{test}");
+        expect("test".braces()).toEqual("{test}");
     });
 
     it("anglebrackets test", function () {
-        expect(helper.anglebrackets("test")).toEqual("<test>");
-    });
-
-    it("getlength test", function () {
-        expect(helper.getlength("")).toEqual(0);
-        expect(helper.getlength("test")).toEqual(4);
-        expect(helper.getlength("test test")).toEqual(9);
-    });
-
-    it("isstring test", function () {
-        expect(helper.isstring("")).toEqual(true);
-        expect(helper.isstring("test")).toEqual(true);
-        expect(helper.isstring("1")).toEqual(true);
-        expect(helper.isstring(1)).toEqual(false);
-        expect(helper.isstring(true)).toEqual(false);
+        expect("test".anglebrackets()).toEqual("<test>");
     });
 
     it("isurl test", function () {
-        expect(helper.isurl("test")).toEqual(false);
-        expect(helper.isurl("test http test")).toEqual(false);
-        expect(helper.isurl("http://www.github.com")).toEqual(true);
-        expect(helper.isurl("https://www.github.com")).toEqual(true);
-        expect(helper.isurl("http://github.com")).toEqual(true);
-        expect(helper.isurl("https://github.com")).toEqual(true);
+        expect("test".isurl()).toEqual(false);
+        expect("test http test".isurl()).toEqual(false);
+        expect("http://www.github.com".isurl()).toEqual(true);
+        expect("https://www.github.com".isurl()).toEqual(true);
+        expect("http://github.com".isurl()).toEqual(true);
+        expect("https://github.com".isurl()).toEqual(true);
     });
 
     it("isnullorempty test", function () {
-        expect(helper.isnullorempty("")).toEqual(true);
-        expect(helper.isnullorempty(null)).toEqual(true);
-        expect(helper.isnullorempty(undefined)).toEqual(true);
-        expect(helper.isnullorempty("test")).toEqual(false);
-        expect(helper.isnullorempty(true)).toEqual(false);
-        expect(helper.isnullorempty(1)).toEqual(false);
-        expect(helper.isnullorempty("null")).toEqual(false);
-        expect(helper.isnullorempty("undefined")).toEqual(false);
+        expect("".isnullorempty()).toEqual(true);
+        expect("test".isnullorempty()).toEqual(false);
     });
 
 });  

@@ -18,48 +18,43 @@ npm install --save texthelper1
 
 ```javascript
 // ES6
-import * as texthelper from 'texthelper1';
+import 'texthelper1';
 
 // ES5
-const texthelper = require('texthelper1');
+require('texthelper1');
 
 const text = 'asd dsa';
 
 // General
-texthelper.firstup(text);         // Asd dsa
-texthelper.wordsfirstup(text);    // Asd Dsa
-texthelper.upper(text);           // ASD DSA
-texthelper.lower(text);           // asd dsa
-texthelper.doublequotes(text);    // "asd dsa"
-texthelper.singlequotes(text);    // 'asd dsa'
-texthelper.camelcase(text);       // asdDsa
-texthelper.pascalcase(text);      // AsdDsa
-texthelper.snakecase(text);       // asd_dsa
-texthelper.kebabcase(text);       // asd-dsa
-texthelper.reverse(text);         // asd dsa
-texthelper.removenumber(text);    // asd dsa
-texthelper.removespace(text);     // asddsa
+text.firstup();         // Asd dsa
+text.wordsfirstup();    // Asd Dsa
+text.doublequotes();    // "asd dsa"
+text.singlequotes();    // 'asd dsa'
+text.camelcase();       // asdDsa
+text.pascalcase();      // AsdDsa
+text.snakecase();       // asd_dsa
+text.kebabcase();       // asd-dsa
+text.reverse();         // asd dsa
+text.removenumber();    // asd dsa
+text.removespace();     // asddsa
 
 // Punctuation marks
-texthelper.endpoint(text);        // asd dsa.
-texthelper.question(text);        // asd dsa?
-texthelper.exclamation(text);     // asd dsa!
-texthelper.blabla(text);          // asd dsa...
+text.endpoint();        // asd dsa.
+text.question();        // asd dsa?
+text.exclamation();     // asd dsa!
+text.blabla();          // asd dsa...
 
 // Brackets
-texthelper.brackets(text);        // [asd dsa]
-texthelper.parentheses(text);     // (asd dsa)
-texthelper.braces(text);          // {asd dsa}
-texthelper.anglebrackets(text);   // <asd dsa>
+text.brackets();        // [asd dsa]
+text.parentheses();     // (asd dsa)
+text.braces();          // {asd dsa}
+text.anglebrackets();   // <asd dsa>
 
 // Validator
-texthelper.isstring(text);        // true
-texthelper.isurl(text);           // false
-texthelper.isnullorempty(text);   // false
+text.isurl();           // false
+text.isnullorempty();   // false
 
 // Miscellaneous
-texthelper.password(text);        // *******
-texthelper.reset(text);           // 
-texthelper.getlength(text);       // 7
-texthelper.trim(text);            // asd dsa
+text.password();        // *******
+text.reset();           // 
 ```
